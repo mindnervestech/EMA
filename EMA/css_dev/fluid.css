@@ -1,0 +1,288 @@
+@charset "UTF-8";
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+body {background:#1a3238; font-family:Arial, Helvetica, sans-serif;}
+img, object, embed, video {
+	max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {margin:0;}
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Dreamweaver Fluid Grid Properties
+	----------------------------------
+	dw-num-cols-mobile:		4;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	12;
+	dw-gutter-percentage:	25;
+	
+	Inspiration from "Responsive Web Design" by Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	and Golden Grid System by Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+.fluid {
+	clear: both;
+	margin-left: 0;
+	width: 100%;
+	float: left;
+	display: block;
+}
+
+.fluidList {
+    list-style:none;
+    list-style-image:none;
+    margin:0;
+    padding:0;        
+}
+
+.fltLeft {float:left;}
+.fltRight {float:right;}
+.wrapper {margin:0 auto; width:960px;}
+.header {padding:10px; background:#fff; overflow:hidden}
+.logo {float:left;}
+.topRightSection {float:right; overflow:hidden;}
+.welcomeUser {margin-right:20px; line-height:40px;}
+.socialIcons {width:115px; background:url(../images/socialIcons.png) left top no-repeat; height:40px;}
+.socialIcons a.facebook {height:40px; width:38px; float:left}
+.socialIcons a.tweeter {height:40px; width:38px; float:left}
+.socialIcons a.linkedin {height:40px; width:38px; float:left}
+.mainMenuSection {background:transparent; overflow:hidden; margin:10px 0;}
+.mainMenuSection .menuBtns {background:#32474d; padding:6px 45px; float:left; margin-right:15px; border-radius: 6px; width:100px; color:#fff; font-size:16px; text-align:center; height:43px; text-decoration:none;}
+.mainMenuSection .menuBtns .dashboard {background:url(../images/dashboard-icon.png) center top no-repeat; padding-top:21px;}
+.mainMenuSection .menuBtns .help {line-height:43px;}
+.mainMenuSection .setting {background:#32474d url(../images/setting-icon.png) center center no-repeat; padding:6px 10px; float:left; margin-right:15px; border-radius: 6px; width:40px; color:#fff; font-size:16px; text-align:center; height:43px; text-decoration:none;}
+
+.mainMenuSection .addGreenBtn {float:right; background:#4ab349 url(../images/add-icon-green.png) 5px center no-repeat; border-radius:6px; padding:10px 10px 10px 30px; text-decoration: none; color:#fff; margin-top:8px}
+.contentSection {background:#fff; padding:10px; overflow:hidden; color:#000; border-radius: 6px;}
+.sectionMenu {overflow:hidden; text-align:center;}
+.sectionMenu a {float:left; width:200px; padding:10px; text-align:center; font-size:20px; background:#90a6ad;  color:#e8e8e8; margin-right:10px; border-radius:6px; text-decoration:none;}
+.sectionMenu a:hover {background:#1b343b; color:#fff;}
+.sectionMenu a.active {background:#1b343b; color:#fff;}
+.contentData {border:1px solid #e8ebed; margin: 10px 0 0 0; padding: 0;}
+h2.heading {background:#e8ebed; padding:6px; margin:0}
+
+
+.quesCreateArea {padding:10px; overflow:hidden;}
+.quesCreateArea .quesMenuSection {float:left; width:140px; margin-right:6px;}
+.qMenuitem {padding:5px 3px 0 52px; text-decoration:none; height:43px; display:block; font-size:12px; background:url(../images/menuImage.png) left top no-repeat; margin-bottom:4px;}
+.qMenuitem:hover{background:#f3f3f3 url(../images/menuImage.png) left top no-repeat; border-radius: 4px 0 0 4px; color: #000;}
+.qMenuitem.mcs{background-position:0px 0px;}
+.qMenuitem.ranking{background-position:0px -52px;}
+.qMenuitem.rating{background-position:0px -108px;}
+.qMenuitem.fit{background-position:0px -165px;}
+.qMenuitem.contact{background-position:0px -221px;}
+.qMenuitem.dateTime{background-position:0px -273px;}
+.qMenuitem.colMed{background-position:0px -326px;}
+
+.quesCreateArea .quesContentArea {margin-left:146px; height:340px; padding:10px; border:2px solid #e8ebed; background:#f3f3f3;}
+.contentFooterArea {background:#e8ebed; padding:10px;}
+.contentFooterArea .blueBtn {background:#41ade2; color:#fff; text-decoration:none; font-size:13px; text-transform:capitalize; padding:5px 10px; border-radius:4px;}
+.contentFooterArea .blueBtn:hover {background:#2e95c7;}
+.footer {text-align:right; font-size:12px; margin:5px 0; color:#90a6ad;}
+
+
+
+
+
+.row {border-bottom:1px solid #dddddd; border-top:1px solid #fff; padding:20px; overflow:hidden; height:100%;}
+.row .listNumber {float:left; width:60px; margin-right:15px; background:url(../images/listItemBg2.png) left top no-repeat; height:60px; text-align:center; line-height:60px; font-size:26px;}
+.row .questionArea {margin:0 241px 0 75px; min-height:180px; border-right:1px solid #fff; padding:5px 10px;}
+.row .questionArea .question {font-size:26px; margin-bottom:5px;}
+.row .questionArea .options {font-size:16px; margin-bottom:5px;}
+.row .questionArea .inputElement { margin-bottom:5px;}
+.row .questionArea .inputElementDate {overflow:hidden; font-size:14px;}
+.row .questionArea .inputElementDate .dateCol {float:left; width:100px; margin-right:10px;}
+.row .questionArea .inputElementDate .dateCol select{width:90%; padding:1%; font-size:16px;}
+.row .questionArea .inputElementDate .dateCol:after{content:" / "; font-size:16px; color:#000;}
+.row .questionArea .inputElementDate .dateCol.last:after{content:"";}
+.row .questionArea .inputElementDate .textBox{width:98%; padding:1%; font-size:16px;} 
+.row .questionArea .inputElement .fullTextarea {width:98%; padding:1%; min-height:100px; font-size:16px;}
+.row .questionArea .inputElement .textBox{width:98%; padding:1%; font-size:16px;}
+.rankingSection {background:url(../images/ico-move.png) 10px 14px no-repeat; padding:10px 10px 10px 30px; border:1px dotted #000; border-radius:15px; margin-bottom:6px;}
+.row .imageUploadArea {float:right; width:240px; background:#e2e2e2; text-align:center; height:150px; padding-bottom:40px; position:relative;  border-left:1px solid #ccc;}
+.dummyImg {height:140px; width:140px; border:3px ridge #ccc; overflow:hidden; margin:4px auto 0; }
+.row .imageUploadArea .buttonArea {position:absolute; width:96%; padding:5px 2%;border-top:1px solid #999; bottom:0; background:#ccc; text-align:right;}
+.button{background:#173238; margin-right:5px; padding:4px 10px; color:#fff; font-size:14px; border:1px solid #000;}
+#amount{margin-top:10px; background:transparent; color:#666 !important; border: 0; font-weight: bold;}
+.mandatory {color:#FF0000;}
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+
+
+.greyRow {background:#ccc;}
+.whiteRow {background:#fff;}
+
+.detailMap td{padding:10px;}
+
+.dashboardLeft {float:left; padding:10px 15px; width:160px;}
+.dashboardRight {margin-left:190px;}
+
+
+@media only screen and (min-width: 481px) {
+
+.gridContainer {
+	width: 93.6%;
+	padding-left: 1.2%;
+	padding-right: 1.2%;
+	clear: none;
+	float: none;
+	margin-left: auto;
+}
+#div1 {
+}
+.hdr {
+}
+.mainNv {
+}
+.main {
+position: static;
+height: auto;
+width: 100%;
+margin-left: 0;
+}
+#mainFooter {
+}
+.hide_tablet {
+display: none;
+}
+.zeroMargin_tablet {
+margin-left: 0;
+}
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+
+.gridContainer {
+	width: 80.6333%;
+	max-width: 1232px;
+	padding-left: 0.6833%;
+	padding-right: 0.6833%;
+	margin: auto;
+	clear: none;
+	float: none;
+	margin-left: auto;
+}
+
+.hdr {
+	position:relative;
+	margin: 0;
+	width:94.5%;
+	padding: 0 3% 3% 3%;
+	background-color:#fff;
+	height: 24px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.hdr img{
+	float:left;
+}
+
+.hdr .sicons {
+	position:absolute;
+	right:3%;
+	top:3px;
+	}
+
+.hdr .subscriber a{
+	padding-left:16%;
+	padding-bottom:2em;
+	color: #a5a5a5;
+	text-decoration:none;
+	}
+
+.main .mainNv {
+	margin-top: 1.4em;
+	color:#FFFfff;
+}
+
+.mainNv .btn{
+	float:left;
+	background-color:#31474d;
+	text-align:center;
+	width: 7em;
+	height: 2.2em;
+	border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	margin-bottom:1.6em;
+	padding-top:.4em;
+	}
+
+.mainNv .btn a{
+	color:#ccc;
+	text-align:center;
+	text-decoration:none;
+	padding:.3em;
+	font-weight:900;
+	line-height:.8em;
+	
+	}
+
+.mainNv .btn#b2{
+	margin-left: 1.6em
+	}
+
+.mainNv .btn#b3{
+	margin-left: 1.6em
+	}
+	
+.mainNv .btn#primary{
+	
+	float:right;
+	background-color:#3DB76F;
+	width: 9em;
+	height: auto;
+	margin-bottom:1.9em;
+	margin-top:.4em;
+	padding:.4em;
+
+	}
+	
+.mainNv .btn#primary a{
+	color:#fff;
+	text-align:center;
+	text-decoration:none;
+	font-size:1.4em;
+	font-weight:bold;
+	}	
+
+.main {
+	float:right;
+	margin-top:.8em;
+	width:92%;
+
+	
+}
+
+.mainCNT {
+
+	height: 571px;
+	background-color:#FFF;
+	color: rgb(68,68,68);
+	-webkit-border-radius: 10px 0px 0px 10px;
+	border-radius: 10px 0px 0px 10px;
+	}
+	
+#mainFooter {
+	padding-top:.7em;
+	color:#CCC;
+	font-size: .8em;
+	text-align:right;
+}
+.zeroMargin_desktop {
+margin-left: 0;
+}
+.hide_desktop {
+display: none;
+}
+}

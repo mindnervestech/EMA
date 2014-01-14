@@ -1,0 +1,93 @@
+
+.button {
+    display: block;
+    float: right;
+    padding: 0;
+    width: 200px;
+    background-color: bisque;
+}
+
+.center {
+	width: 950px;
+	padding-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.header{ width:1000px}
+.login{
+	float:right;
+	width:700px;
+	height:800px;
+	font-size:1.2em;
+	background: url(../images/register-box.png) no-repeat;
+}
+.login .wwFormTable{
+	padding:12px 0 0 24px;
+}
+.login .wwFormTable tr{
+	height:38px;
+}
+
+.login input[type="text"], .login input[type="password"]{
+	width:200px;
+	height:30px;
+	line-height:30px;
+	padding:0 3px;
+	margin:0 6px;
+	background:url(../images/logininput.png) no-repeat -1px -1px;
+	border:none;
+}
+.login ul{padding-top:12px}
+.login li{
+	list-style:none;
+	padding-left:12px;
+	font:Arial;
+
+}
+.login li.label{
+	padding:20px 0 0 0;
+	height:20px;
+}
+.login li.text{
+	padding:0 0 10px 0;
+	height:30px;
+}
+
+.login a:link, .login a:visited{
+	text-decoration:none;
+	color:#aaa;
+}
+.login a:hover{
+	text-decoration:underline;
+	color:#aaf;
+}
+ #base_info{
+	height:40px;
+	line-height:40px;
+}
+#base_modify{
+	height:45px;
+	line-height:42px;
+}
+
+#login_login, #base_info_submit, #base_modify_submit, #more_info_submit{
+	color:white;
+	font-weight:bold;
+	width:150px;
+	height:50px;
+	border:none;
+	background: url(../images/loginbtn.png) no-repeat 50% 50%;
+}
+#more_info_submit{
+	margin:24px 150px 0 0;	
+}
+#base_info_submit{
+	margin:24px 80px 0 0;
+	
+}
+#base_modify_submit{
+	margin:50px 80px 0 0;
+}
+#forgot-password{
+	text-align:right
+}

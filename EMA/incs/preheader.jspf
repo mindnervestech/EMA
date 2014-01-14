@@ -1,0 +1,25 @@
+	<div id="header">
+	
+    <div id="globallink">
+		<a href="/udesign/login"><img src="/udesign/images/udesign.png" style="float:left"/></a>
+
+		<span class="udesign">uDesign</span></a>
+		<span class="label">Real-Time Data Solution for Medical Research</span>
+
+    </div>
+    </div>
+<%--
+	<div class="nav-holder">
+	<div class="holder">
+	  <div style="margin:0 auto; width:950px">
+		<ul id="nav" style="float:right; width:350px; margin-right:40px">
+               <li><a href="register"><span>CreateNewAccount</span></a></li>
+               <%if(!request.getRequestURI().endsWith("/login.jsp")){ %>
+               <li><a href="/udesign/login"><span>uDesign</span></a></li>
+               <% } %>
+               <li><a href="/"><span>BayesSoft</span></a></li>
+           </ul>
+       </div>
+    </div>
+    </div>
+--%>

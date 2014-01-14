@@ -1,0 +1,1 @@
+$('#multiple_choice').click(function () {alert('sasa'); $('.placeholder').append('asdasdasd')});

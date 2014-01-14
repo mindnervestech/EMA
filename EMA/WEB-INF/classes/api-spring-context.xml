@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:component-scan base-package="com.bayessoft.ema.business" />
+	<context:property-placeholder location="classpath:database.properties,classpath:messages.properties"/>
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="url" value="jdbc:mysql://localhost:3309/ema" />
+		<beans:property name="username" value="root" />
+		
+	</beans:bean>
+	<!-- Model classes that maps to database fields -->
+	<beans:bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="annotatedClasses">
+			<beans:list>
+
+				<beans:value>com.bayessoft.ema.model.Users</beans:value>
+				<beans:value>com.bayessoft.ema.model.UserLogin</beans:value>
+			    <beans:value>com.bayessoft.ema.model.Roles</beans:value>
+			    <beans:value>com.bayessoft.ema.model.Category</beans:value>
+			    <beans:value>com.bayessoft.ema.model.PatientQuestion</beans:value>
+			    <beans:value>com.bayessoft.ema.model.Question</beans:value>
+			    <beans:value>com.bayessoft.ema.model.Questionnaire</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionType</beans:value>
+			    <beans:value>com.bayessoft.ema.model.Study</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionContact</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionDateTime</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionLocation</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionMultiple</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionPhotoUpload</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionRank</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionRating</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionText</beans:value>
+			    <beans:value>com.bayessoft.ema.model.QuestionnairPatientMapping</beans:value>
+			    <beans:value>com.bayessoft.ema.model.UsersGroup</beans:value>
+			    <beans:value>com.bayessoft.ema.model.Answer</beans:value>
+			    
+			    
+			</beans:list>
+		</beans:property>
+		<!-- Hibernate configuration -->
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</beans:prop>
+				<beans:prop key="hibernate.show_sql">true</beans:prop>
+				<!-- <beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop> -->
+				
+				<beans:prop key="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</beans:prop>
+				<beans:prop key="hibernate.c3p0.acquire_increment">5</beans:prop>
+				<beans:prop key="hibernate.c3p0.idle_test_period">1800</beans:prop>
+				<beans:prop key="hibernate.c3p0.max_size">50</beans:prop>
+				<beans:prop key="hibernate.c3p0.max_statements">50</beans:prop>
+				<beans:prop key="hibernate.c3p0.min_size">5</beans:prop>
+				<beans:prop key="hibernate.c3p0.timeout">1800</beans:prop>
+			
+			</beans:props>
+			
+			
+			
+			
+		</beans:property>
+	</beans:bean>
+	
+	
+	<beans:bean id="questionDAOImpl" 
+	   class="com.bayessoft.ema.dao.QuestionDAOImpl">
+	<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+
+		<beans:bean id="userDAOImpl"
+		class="com.bayessoft.ema.dao.UserDAOImpl">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+	
+		
+		<beans:bean id="emaDAOImpl"
+		class="com.bayessoft.ema.dao.EmaDAOImpl">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+	
+	<beans:bean id="messageResources"
+		class="com.bayessoft.ema.utils.MessageResources">
+	</beans:bean>
+		
+
+</beans:beans>

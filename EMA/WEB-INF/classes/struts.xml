@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+	<constant name="struts.action.extension" value="action,do," />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	
+	<package name="struts2" extends="struts-default">
+	
+		
+<interceptors>
+       <interceptor name="SessionCheckInterceptor"   class="com.bayessoft.ema.interceptor.SessionCheckInterceptor"/>
+      <interceptor-stack name="testSessionValidationStack">
+                <interceptor-ref name="SessionCheckInterceptor" />
+               <interceptor-ref name="defaultStack" />
+      </interceptor-stack> 
+         
+</interceptors>
+    
+  
+	     <global-results>
+           <result name="sessionexpired" >login.jsp</result>
+         </global-results> 
+	    
+		<action name="submitquestion" class="com.bayessoft.ema.actions.SubmitQuestionnaire">	
+		    <interceptor-ref name="testSessionValidationStack"/>	
+		    <result name="success">qPageDev.jsp</result>  
+        
+		       <result type="stream">
+        		<param name="contentType">text/html</param>
+        		<param name="inputName">stream</param>
+        	</result>       
+		        	    						
+		</action>
+		
+		<action name="showQuestion" class="com.bayessoft.ema.actions.SaveQuestionnaire" >
+		    <interceptor-ref name="testSessionValidationStack"/>	
+		    <result name="input">/login.jsp</result>
+			<result name="success">answerSheet.jsp</result>
+		</action>
+		
+			<action name="showQuestionByDoctor" >
+			<interceptor-ref name="testSessionValidationStack"/>	
+			<result name="success">qPreviewByDoc.jsp</result>
+			
+			
+		</action>
+		
+			
+			<action name="showQuestionByDoctor" class="com.bayessoft.ema.actions.SaveQuestionnaire" >
+		    <interceptor-ref name="testSessionValidationStack"/>	
+		 <result name="success">qPreviewByDoc.jsp</result>
+		</action>
+        
+			<action name="showEventByDoctor" class="com.bayessoft.ema.actions.SaveQuestionnaire" >
+		    <interceptor-ref name="testSessionValidationStack"/>	
+		 <result name="success">qPreviewEventByDoc.jsp</result>
+		</action>
+			
+			
+        <action name="login" class="com.bayessoft.ema.actions.LoginAction">
+			<result name="input">/login.jsp</result>
+			<result name="doctorsuccess">/doctorHome.jsp</result>
+			<result name="patientsuccess">/patienthome.jsp</result>
+			<result name="failure">/login.jsp</result>
+		</action>
+		
+        <action name="logout" class="com.bayessoft.ema.actions.LogoutAction">
+			<result name="logout">login.jsp</result>
+		</action>
+        
+        	<action name="sendMail" class="com.bayessoft.ema.actions.SendMailAction" >	
+        	    <interceptor-ref name="testSessionValidationStack"/>	
+		        <result name="success">distributeStudy.jsp</result>       	  						
+	       </action>
+	       
+        	
+        	<action name="sendMailImplement" class="com.bayessoft.ema.actions.InvitePatientAction" >
+        	    <interceptor-ref name="testSessionValidationStack"/>		
+		        <result name="success">distributeStudy.jsp</result>       	  						
+	       </action>
+        
+        	   <action name="formPreview" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">show.jsp</result>
+              </action>
+
+              <action name="populateDashboard" class="com.bayessoft.ema.actions.DashBoardAction">
+                 <interceptor-ref name="testSessionValidationStack"/>	
+			     <result name="success">doctorHome.jsp</result>
+		      </action>
+        	
+              
+              <action name="people" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">myUsers.jsp</result>
+              </action>
+              
+              
+               <action name="myUserGroup" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">myUsersGroup.jsp</result>
+               </action>
+              
+                 <action name="peopleHead" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">people.jsp</result>
+                 </action>
+              
+                <action name="myforms" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">doctorHome.jsp</result>
+              </action>
+              
+                  <action name="mydata" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">watchResponses.jsp</result>
+              </action>
+              
+               <action name="newUser" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">AddPatient.jsp</result>
+              </action>
+              
+               
+                 <action name="importUserList" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">importUserList.jsp</result>
+                 </action>
+               
+                 
+                  <action name="importUserListNewGroup" >
+                  <interceptor-ref name="testSessionValidationStack"/>
+                  <result type="redirect">importUserListNewGroup.jsp</result>
+                 
+                 </action>
+                 
+                 
+                  <action name="importUserListGroup" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result name="view">importUserListGroup.jsp</result>
+                 </action>
+               
+                    
+               <action name="newForm" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">privacyPolicy.jsp</result>
+              </action>
+              
+               
+               <action name="newEventTracker" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">privacyPolicyEvent.jsp</result>
+              </action>
+               
+              
+                 <action name="newGroup" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">createGroup.jsp</result>
+                  </action>
+                  
+                 
+                  <action name="distributeSurvey" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                  <result type="redirect">distribute.jsp</result>
+                  </action>
+              
+               
+              <action name="Myform_*" method="{1}" class="com.bayessoft.ema.actions.MyFormsAction" >
+                  
+                  <interceptor-ref name="fileUpload">
+				        <param name="maximumSize">2097152</param>
+				        <param name="allowedTypes">
+				            image/png,image/gif,image/jpeg,image/pjpeg
+       					 </param>
+   						 </interceptor-ref>
+                  
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                
+                  	<result name="view">myForms.jsp</result>
+		            <result name="get">myForms.jsp</result>
+		            <result name="list">myForms.jsp</result>
+		            <result name="allow">myForms.jsp</result>
+		            <result name="edit">myForms.jsp</result>
+		            <result name="deleteQuestionnaire">doctorHome.jsp</result>
+		            <result name="favouriteQuestionnaire">doctorHome.jsp</result>
+		            <result name="editQuestionnaire">newQuestionnaire.jsp</result>
+		            <result name="noeditQuestionnaire">doctorHome.jsp</result>
+                    <result name="qDesign">qPageDev.jsp</result>
+                    <result name="qEventDesign">qPageDevEvent.jsp</result>
+                    <result name="newQuestionnaire">newQuestionnaire.jsp</result>
+                    <result name="newEventTracker">newEventTracker.jsp</result>
+		            
+                  <result type="stream">
+        		     <param name="contentType">text/html</param><param name="inputName">inputStream</param>
+        	     </result>        
+                  
+                  
+              </action>
+               
+              <action name="MyGroup_*" method="{1}" class="com.bayessoft.ema.actions.MyGroupAction" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+                
+                   <interceptor-ref name="fileUpload">
+		       		 <param name="maximumSize">4096</param>
+		       		        <param name="allowedTypes">image/jpeg,image/bmp</param>
+		  	       </interceptor-ref>
+		  
+                  
+                  	<result name="new">createGroup.jsp</result>
+		            <result name="list">myGroups.jsp</result>
+		            <result name="view">importUserListGroup.jsp</result>
+		            <result name="success">myUsers.jsp</result>
+                    <result name="delete">myUsers.jsp</result>
+                    <result name="deleteUser">myUsersGroup.jsp</result>
+                    <result name="favouriteGroup">myUsers.jsp</result>
+    
+                  
+              </action>
+              
+              
+              
+                <action name="MyFormDesign_*" method="{1}" class="com.bayessoft.ema.actions.EditMyFormAction" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+
+		            <result name="view">newQuestionnaire.jsp</result>
+		            <result name="edit">newQuestionnaire.jsp</result>
+		
+                  
+                </action>
+              
+              
+              
+              
+               <action name="Distribute_*" method="{1}" class="com.bayessoft.ema.actions.DistributeSurveyAction" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+
+		            <result name="view">distribute.jsp</result>
+		            <result name="form">doctorHome.jsp</result>
+		
+                  
+              </action>
+              
+               
+               
+               
+                <action name="AnswerSubmit_*" method="{1}" class="com.bayessoft.ema.actions.AnswerSubmitAction" >
+                  <interceptor-ref name="testSessionValidationStack"/>	
+
+		            <result name="view">patienthome.jsp</result>
+	
+                  
+              </action>
+           
+              
+                
+                 <action name="Register_*"  method="{1}"  class="com.bayessoft.ema.actions.RegisterAction">
+                     
+		            <result name="signup">register.jsp</result>
+					<result name="success">doctorRegister.jsp</result>
+					
+					<result name="editPatient">patienthome.jsp</result>
+					<result name="editDoctor">doctorHome.jsp</result>					
+				    <result name="editUserProfile">editPatient.jsp</result>
+					
+					
+					
+				</action>
+                
+                 
+                 
+                <action name="getResults_*" method="{1}" class="com.bayessoft.ema.actions.ReportAction">
+                   <interceptor-ref name="testSessionValidationStack"/>	
+		              <result name="view">reportResults.jsp</result>
+		              <result name="success">reportAnalyze.jsp</result>
+		        </action>
+		        
+                
+                 <action name="Forget_*" method="{1}" class="com.bayessoft.ema.actions.ForgetPasswordAction">
+		              <result name="success">forgot.jsp</result>
+		        </action>
+                 
+                
+                
+                
+        
+        	</package>
+        	
+        	
+</struts>

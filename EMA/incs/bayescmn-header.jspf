@@ -1,0 +1,48 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%--
+<div id="cmnheader" style="height:43px">
+    <div class="header_vip" style="width:90%;margin:0 auto">
+    <div class="udlogo">
+    <a href="/udesign/<s:if test="#session.doctorid!=null">doctorhome</s:if><s:else><s:if test="#session.patientid!=null">patienthome</s:if><s:else>udlogin</s:else></s:else>">
+    <img alt="" height="40" src="/udesign/images/udesign.png" style="float:left" />
+    <span style="font-size:2em;line-height:46px;color:#2e2e80"><s:if test="#session.doctorid!=null">uDesign</s:if><s:else><s:if test="#session.patientid!=null">uCollect</s:if><s:else>udlogin</s:else></s:else></span></a>
+    </div>
+
+
+    <ul class="usermenu" style="font-size:1.3em">
+    <s:if test="#session.doctorid!=null">
+        <li class="first"><a href="/udesign/doctorhome">uDesign</a></li>
+        <li><a href="/">id:<s:property value="#session.doctorid" /></a></li>
+	</s:if><s:else>
+    <s:if test="#session.patientid!=null">
+        <li class="first"><a href="/udesign/patienthome">uCollect</a></li>
+        <li><a href="/udesign/myprofile">id:<s:property value="#session.patientid" /></a></li>
+	</s:if>
+		<s:else>
+			<li class="first"><a href="/udesign/login">login</a></li>
+		</s:else>
+	</s:else>
+        <li><a href="/udesign/logout">Logout</a></li>
+        <li class="end"><a href="/udesign/help/help<s:if test="#session.patientid!=null">Patient</s:if><s:else>Doctor</s:else>.html" target="_blank">Help</a></li>
+    </ul>
+    </div>
+</div>
+ --%>
+ 
+<div id="udheader" style="height:50px">
+<div class="holder" style="padding:0 0 1px">
+    <strong class="udlogo">
+    <a href="/udesign/<s:if test="#session.doctorid!=null">doctorhome</s:if><s:else><s:if test="#session.patientid!=null">patienthome</s:if><s:else>login</s:else></s:else>">
+    Bayessoft Data solutions for medical research &amp; personalized health care.</a></strong>
+<div class="navarea" style="padding-top:10px;padding-left:30px;">
+    <ul class="add-nav">
+		<li class="udregister"><a href="/udesign/register?userid=<s:property value="#session.doctorid"/>"><font size="3px"><s:if test="#session.username!=null">Hello, <s:property value="#session.username"/></s:if></font></a></li>           
+		<li class="udlogin"><a href="/udesign/logout"><font size="3px">Logout</font></a></li>
+    </ul>
+
+</div>
+
+</div>
+
+     
+</div>

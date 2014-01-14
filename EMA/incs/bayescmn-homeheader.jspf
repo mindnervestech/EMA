@@ -1,0 +1,102 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%--
+<div id="cmnheader" style="height:43px">
+    <div class="header_vip" style="width:90%;margin:0 auto">
+    <div class="udlogo">
+    <a href="/udesign/<s:if test="#session.doctorid!=null">doctorhome</s:if><s:else><s:if test="#session.patientid!=null">patienthome</s:if><s:else>udlogin</s:else></s:else>">
+    <img alt="" height="40" src="/udesign/images/udesign.png" style="float:left" />
+    <span style="font-size:2em;line-height:46px;color:#2e2e80"><s:if test="#session.doctorid!=null">uDesign</s:if><s:else><s:if test="#session.patientid!=null">uCollect</s:if><s:else>udlogin</s:else></s:else></span></a>
+    </div>
+
+
+    <ul class="usermenu" style="font-size:1.3em">
+    <s:if test="#session.doctorid!=null">
+        <li class="first"><a href="/udesign/doctorhome">uDesign</a></li>
+        <li><a href="/">id:<s:property value="#session.doctorid" /></a></li>
+	</s:if><s:else>
+    <s:if test="#session.patientid!=null">
+        <li class="first"><a href="/udesign/patienthome">uCollect</a></li>
+        <li><a href="/udesign/myprofile">id:<s:property value="#session.patientid" /></a></li>
+	</s:if>
+		<s:else>
+			<li class="first"><a href="/udesign/login">login</a></li>
+		</s:else>
+	</s:else>
+        <li><a href="/udesign/logout">Logout</a></li>
+        <li class="end"><a href="/udesign/help/help<s:if test="#session.patientid!=null">Patient</s:if><s:else>Doctor</s:else>.html" target="_blank">Help</a></li>
+    </ul>
+    </div>
+</div>
+ --%>
+ 
+ 
+<div id="udheader">
+<div class="holder">
+    <strong class="udhomelogo">
+    <a href="/udesign/<s:if test="#session.doctorid!=null">doctorhome</s:if><s:else><s:if test="#session.patientid!=null">patienthome</s:if><s:else>login</s:else></s:else>">
+    Bayessoft Data solutions for medical research &amp; personalized health care.</a></strong>
+<div class="navarea" style="padding-top:15px;padding-left:30px;">
+    <ul class="add-nav">
+		<li class="udregister"><a href="register?userid=<s:property value="#session.doctorid"/>"><font size="3px"><s:if test="#session.username!=null">Hello, <s:property value="#session.username"/></s:if></font></a></li>           
+		<li class="udlogin"><a href="/udesign/logout"><font size="3px">Logout</font></a></li>
+    </ul>
+    <div class="social-networks" width="150">
+        <a href="/contact-us.html"><strong class="sub-title"><cufon class="cufon cufon-canvas" alt="Contact " style="width: 72px; height: 17px; "><canvas width="83" height="19" style="width: 83px; height: 19px; top: -1px; left: -1px; "></canvas><cufontext>Contact </cufontext></cufon><cufon class="cufon cufon-canvas" alt="Us" style="width: 20px; height: 17px; "><canvas width="27" height="19" style="width: 27px; height: 19px; top: -1px; left: -1px; "></canvas><cufontext>Us</cufontext></cufon></strong></a>
+        <ul>
+            <li><a href="#">facebook</a></li>
+            <li><a href="#" class="twitter">twitter</a></li>
+            <li><a href="#" class="linkedin">linkedin</a></li>
+            <!--li><a href="#" class="skype">skype</a></li-->
+        </ul>
+    </div>
+</div>
+
+</div>
+<%--
+<div class="nav-holder">
+    <div class="holder">
+        <ul id="nav">
+            <li><a href="index.htm"><span>Home</span></a></li>
+            <li><a href="do-it-yourself.html"><span>Our Services</span></a>
+                <ul>
+                    <li><a href="do-it-yourself.html" class="setting"><span>Do It Yourself</span></a></li>
+                    <li><a href="full-service.html" class="service"><span>Full Service</span></a></li>
+                    <li><a href="consulting.html" class="consult"><span>Consulting</span></a></li>
+                    <!--li><a href="pricing.html" class="price"><span>Pricing</span></a></li-->
+                </ul>
+            </li>
+            <li><a href="products.html"><span>Our Products</span></a>
+            	<ul>
+                    <li><a href="udesign.html" class="webapps"><span>Web Apps</span></a></li>
+                    <li><a href="icollect.html" class="mobileapps"><span>Mobile Apps</span></a></li>
+                    <li><a href="devices.html" class="medicaldevices"><span>Medical Devices</span></a></li>
+                </ul>
+            </li>
+            <!--li><a href="researchers.html"><span>Our Customers</span></a>
+            	<ul>
+                    <li><a href="researchers.html" class="researchers"><span>Researchers</span></a></li>
+                    <li><a href="developers.html" class="drugdev"><span>Drug Developers</span></a></li>
+                    <li><a href="doctors.html" class="doctors"><span>Doctors</span></a></li>
+                     <li><a href="patients.html" class="patients"><span>Patients</span></a></li>
+                </ul>
+            </li-->
+            <li><a href="our-mission.html"><span>About Us</span></a>
+            	 <ul>
+                 	 <!--li><a href="our-mission.html" class="mission"><span>Our Mission</span></a></li-->
+                 <li><a href="our-team.html" class="team"><span>Who We Are</span></a></li>
+                 <li><a href="our-publication.html" class="news"><span>Our Publication</span></a></li>
+                 <li><a href="contact-us.html" class="contact"><span>Contact Us</span></a></li>
+                 </ul>
+            </li>
+        </ul>
+       <!-- <form action="#" class="form-search">
+            <fieldset>
+                <input type="text" />
+                <input type="submit" value="submit" />
+            </fieldset>
+        </form>-->
+    </div>
+</div>
+ --%>
+     
+	</div>

@@ -1,0 +1,22 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<div id="cmnheader" style="height:43px">
+    <div class="header_vip" style="width:90%;margin:0 auto">
+    <div class="logo" >
+    <a href="/udesign/<s:if test="#session.doctorid!=null">doctorhome</s:if><s:else><s:if test="#session.patientid!=null">patienthome</s:if><s:else>login</s:else></s:else>">
+    <img alt="" height="40px" src="/udesign/images/udesign.png" style="float:left" />
+    <span style="font-size:2em;line-height:50px;color:#2e2e80"><s:if test="#session.doctorid!=null">uDesign</s:if><s:else><s:if test="#session.patientid!=null">uCollect</s:if><s:else>Login</s:else></s:else></span>
+    </a></div>
+    <ul class="usermenu" style="font-size:1.3em">
+    <s:if test="#session.doctorid!=null">
+        <li><a href="/udesign/doctorhome">uDesign</a></li>
+        <li><a href="/my/profile">id:<s:property value="#session.doctorid" /></a></li>
+    </s:if>
+    <s:if test="#session.patientid!=null">
+        <li><a href="/udesign/patienthome">uCollect</a></li>
+        <li><a href="/udesign/myprofile">id:<s:property value="#session.patientid" /></a></li>
+    </s:if>
+        <li><a href="/udesign/logout">logout</a></li>
+        <li class="end"><a href="/udesign/help/help<s:if test="#session.patientid!=null">Patient</s:if><s:else>Doctor</s:else>.html">Help</a></li>
+    </ul>
+    </div>
+</div>

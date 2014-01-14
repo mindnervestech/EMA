@@ -1,0 +1,10 @@
+	<div id="header">
+    	<div id="globallink">
+			<ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products.html">Our Products</a></li>
+                <li><a href="/udesign/login">uDesign</a></li>
+                <li><a href="/our-mission.html">About Us</a></li>
+            </ul>
+        </div>
+    </div>

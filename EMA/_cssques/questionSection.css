@@ -1,0 +1,38 @@
+﻿.questionWrapper {background:#f3f3f3; padding:20px; border:1px solid #e9eaee;}
+.questionContainer {background:#f3f3f3; border:2px solid #8FA6AC;}
+.leftSection {position:relative; margin-right:235px; min-height:300px; padding:15px;}
+.rightSection {float:right; width:220px; min-height:300px; background: #e2e2e2; margin: 1px; border:1px solid #fff; padding:6px; position:relative}
+.rendomCheck {color: #555; font-size: 12px; margin: 5px 0;}
+
+.typeOfQuestion {font-size:16px; color:#000; font-weight:bold; margin:3px 5px 3px 20px;}
+.quesNumber {position: absolute; top: -2px; left: -2px; height: 22px; width: 33px; background: url(../_images/q-number-bg.png) -5px 0px no-repeat; text-align: center; font-size: 14px; padding: 6px 6px 6px 0px; color: #fff; font-weight: bold;}
+.questionRow {display:block; margin:3px  5px;}
+.optionRow {display:block; margin:3px  5px;}
+.options {display:block; margin:3px 5px 8px 5px; background:url(../_images/ico-move.png) 7px 10px no-repeat; padding-left:30px;}
+#editorOption {margin:3px;}
+.qTextBox {width:70% !important; padding:6px !important; font-size:12px !important; margin-right:5px !important; border: 1px solid #BAB9B9 !important; border-radius: 3px 3px 3px 3px !important; box-shadow: 0 0 0 #EEEEEE, 0 1px 5px #DDDDDD inset !important;}
+.optionTextbox {width:50% !important; padding:6px !important; font-size:12px !important; margin-right:5px !important; border-radius: 3px 3px 3px 3px !important; box-shadow: 0 0 0 #EEEEEE, 0 1px 5px #DDDDDD inset !important;}
+
+.questionData {padding:15px; position:relative; margin-bottom:10px;}
+
+input[type='radio'] {margin-right:5px;}
+.alighRight {text-align:right; padding:5px;}
+.alighRightTop {position:absolute; right:10px; top:30px;}
+.alighBottom {text-align:right; padding:2%; position:absolute; bottom:5px; width:96%; right:0;}
+.alighLeft {text-align:left; padding:5px;}
+.smallSpacer {height:9px; font-size:8px; background:#transparent;}
+.blockSection {display:block; padding:2px; cursor:default;}
+.checkboxsec {margin:0 5px;}
+.rightSelectType {border: 3px solid #d0d0d0; background: #91a6ab; width: 94%; padding: 3px; height: auto; font-weight: normal; font-size: 14px; margin:5px;}
+.rightSelectType:hover {background:#094546;}
+.submitBtns {border:3px solid #d0d0d0; background: #c6753e; margin:0 3px 0 3px; padding:3px 15px; text-align:center; color:#fff;}
+.submitBtns:hover {background:#4db449; color:#fff;}
+.editorBtns {border:3px solid #d0d0d0; background: #91a6ab; margin:0 3px 0 3px; padding:3px 15px; text-align:center; color:#fff;}
+.editorBtns:hover {background:#094546; color:#fff;}
+
+
+/* overwriting pannel css*/
+.q-options-editor {padding: 0;}
+.q-options {border-top: 1px solid #E0E0E0; padding-top: 0 !important;}
+.q-left .number {margin-left: 0; line-height: 100%; text-align: center; width: auto !important;}
+.multi-radio li {padding-left: 10px;}
