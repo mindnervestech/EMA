@@ -9,9 +9,9 @@
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<beans:property name="url" value="jdbc:mysql://localhost:3309/ema" />
-		<beans:property name="username" value="root" />
-		
+		<beans:property name="url" value="jdbc:mysql://localhost:3306/ema" />
+		<beans:property name="username" value="myuser" />
+		<beans:property name="password" value="mypass" />
 	</beans:bean>
 	<!-- Model classes that maps to database fields -->
 	<beans:bean id="sessionFactory"
